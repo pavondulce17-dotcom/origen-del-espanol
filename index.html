@@ -1,0 +1,576 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El origen del español | Gramática Histórica</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap');
+
+:root {
+  --fondo: #092b33;
+  --fondo-claro: #123d45;
+  --dorado: #e7c979;
+  --crema: #fff0cf;
+  --texto: #f3ecdf;
+  --verde: #43d69a;
+  --rojo: #ff7185;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 24px;
+  min-height: 100vh;
+  color: var(--texto);
+  font-family: 'Poppins', sans-serif;
+  background:
+    radial-gradient(ellipse at top left, #1c5551, transparent 45%),
+    radial-gradient(ellipse at bottom right, #54305b66, transparent 40%),
+    #08262e;
+}
+
+.page {
+  max-width: 950px;
+  margin: auto;
+  position: relative;
+  padding: 35px;
+  border: 1px solid var(--dorado);
+  background: linear-gradient(145deg, #103940f5, #092830f7);
+  box-shadow: 0 15px 50px #0005;
+}
+
+.page::before,
+.page::after {
+  position: absolute;
+  color: var(--dorado);
+  font-size: 42px;
+  line-height: 1;
+}
+
+.page::before {
+  content: "❦";
+  top: 8px;
+  left: 12px;
+}
+
+.page::after {
+  content: "❦";
+  bottom: 8px;
+  right: 12px;
+  transform: rotate(180deg);
+}
+
+.header {
+  text-align: center;
+  padding: 15px 10px 25px;
+  border-bottom: 1px solid #e7c97977;
+}
+
+.eyebrow {
+  color: var(--dorado);
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+h1, h2, h3 {
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+}
+
+h1 {
+  color: var(--crema);
+  font-size: clamp(28px, 5vw, 46px);
+  line-height: 1.25;
+  margin: 16px 0 10px;
+}
+
+h1 span {
+  color: var(--dorado);
+}
+
+.header p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  margin: 10px 0;
+}
+
+.intro {
+  text-align: center;
+  max-width: 740px;
+  margin: 30px auto;
+  font-size: 14px;
+  line-height: 1.9;
+  color: #e7e3d9;
+}
+
+.intro strong {
+  color: var(--dorado);
+}
+
+.illustration {
+  min-height: 170px;
+  margin: 25px auto;
+  max-width: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  padding: 25px;
+  border: 1px solid #e7c97988;
+  background:
+    radial-gradient(ellipse, #b88a3830, transparent 65%),
+    #071f28;
+}
+
+.book {
+  font-size: 75px;
+  filter: drop-shadow(0 5px 12px #0007);
+}
+
+.scroll {
+  font-size: 62px;
+  animation: float 4s ease-in-out infinite;
+}
+
+.illustration-text {
+  max-width: 270px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 21px;
+  line-height: 1.4;
+  color: var(--crema);
+}
+
+.illustration-text small {
+  display: block;
+  margin-top: 10px;
+  color: var(--dorado);
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.section-title {
+  text-align: center;
+  margin: 45px 0 25px;
+  color: var(--dorado);
+  font-size: 23px;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.step {
+  padding: 22px 18px;
+  border: 1px solid #e7c97966;
+  background: #123b43;
+  transition: transform .25s, border-color .25s;
+}
+
+.step:hover {
+  transform: translateY(-5px);
+  border-color: var(--dorado);
+}
+
+.step .number {
+  color: var(--dorado);
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.step .icon {
+  font-size: 32px;
+  margin: 12px 0;
+}
+
+.step h3 {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--crema);
+}
+
+.step p {
+  font-size: 12px;
+  line-height: 1.9;
+  color: #dedfd7;
+}
+
+.fact {
+  margin-top: 25px;
+  padding: 22px;
+  text-align: center;
+  background: #182f45;
+  border-left: 3px solid #c9a4ef;
+  border-right: 3px solid var(--dorado);
+}
+
+.fact h3 {
+  font-size: 16px;
+  color: #d9b8f4;
+}
+
+.fact p {
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.fact strong {
+  color: var(--dorado);
+}
+
+.check-section {
+  margin-top: 45px;
+  padding: 28px;
+  border: 1px solid var(--dorado);
+  background: #0b3038;
+  text-align: center;
+}
+
+.check-section h2 {
+  color: var(--crema);
+  font-size: clamp(19px, 3vw, 26px);
+}
+
+.check-section > p {
+  color: #d9ddd5;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin: 25px 0;
+}
+
+.vote {
+  border: 1px solid var(--dorado);
+  padding: 14px 20px;
+  background: transparent;
+  color: var(--crema);
+  cursor: pointer;
+  font-size: 13px;
+  border-radius: 4px;
+  transition: .25s;
+}
+
+.vote:hover {
+  transform: translateY(-3px);
+  background: #ffffff10;
+}
+
+.vote.yes:hover {
+  border-color: var(--verde);
+}
+
+.vote.no:hover {
+  border-color: var(--rojo);
+}
+
+.vote:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 4px;
+}
+
+.bar-title {
+  margin: 20px 0 10px;
+  color: var(--dorado);
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.bar {
+  height: 15px;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #243f45;
+  border: 1px solid #ffffff25;
+}
+
+.bar-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 20px;
+  transition: width 1s ease, background .4s;
+}
+
+#message {
+  min-height: 48px;
+  margin-top: 18px;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.feedback-icon {
+  font-size: 27px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.restart {
+  display: none;
+  margin: 10px auto 0;
+  background: transparent;
+  color: var(--dorado);
+  border: 1px solid var(--dorado);
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.footer {
+  text-align: center;
+  border-top: 1px solid #e7c97966;
+  margin-top: 35px;
+  padding: 25px 10px 10px;
+}
+
+.footer strong {
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: var(--dorado);
+}
+
+.footer p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+  color: #ded6c6;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-8px) rotate(2deg); }
+}
+
+@media (max-width: 650px) {
+  body {
+    padding: 10px;
+  }
+
+  .page {
+    padding: 25px 17px;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .step {
+    padding: 20px;
+  }
+
+  .illustration {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .illustration-text {
+    max-width: 100%;
+  }
+
+  .check-section {
+    padding: 22px 15px;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .vote {
+    width: 100%;
+  }
+}
+</style>
+</head>
+
+<body>
+<main class="page">
+
+  <header class="header">
+    <div class="eyebrow">✦ Gramática histórica ✦</div>
+    <h1>El origen <span>del español</span></h1>
+    <p>Un viaje a través de las palabras y el tiempo</p>
+  </header>
+
+  <section class="intro">
+    ¿Alguna vez te has preguntado de dónde vienen las palabras que
+    utilizamos todos los días? El español tiene una historia fascinante.
+    Su origen se relaciona principalmente con el <strong>latín</strong>,
+    una lengua que se extendió por gran parte de Europa durante la
+    expansión del Imperio romano.
+  </section>
+
+  <div class="illustration">
+    <div class="book" aria-hidden="true">📜</div>
+    <div class="illustration-text">
+      Cada palabra guarda una historia…
+      <small>DESCUBRE NUESTRO PASADO</small>
+    </div>
+    <div class="scroll" aria-hidden="true">🪶</div>
+  </div>
+
+  <h2 class="section-title">¿Cómo nació el español?</h2>
+
+  <section class="steps">
+
+    <article class="step">
+      <div class="number">ETAPA 01</div>
+      <div class="icon" aria-hidden="true">🏛️</div>
+      <h3>La llegada del latín</h3>
+      <p>
+        En el año 218 a. C. comenzó la presencia romana en la península
+        ibérica. Con el tiempo, el latín se extendió por la región a
+        través de la vida cotidiana, el comercio, el ejército y la
+        administración.
+      </p>
+    </article>
+
+    <article class="step">
+      <div class="number">ETAPA 02</div>
+      <div class="icon" aria-hidden="true">🗣️</div>
+      <h3>El latín hablado</h3>
+      <p>
+        Las personas utilizaban distintas variedades del latín en su
+        vida diaria. Estas formas de hablar fueron cambiando con el
+        tiempo y desarrollaron diferencias entre regiones.
+      </p>
+    </article>
+
+    <article class="step">
+      <div class="number">ETAPA 03</div>
+      <div class="icon" aria-hidden="true">📖</div>
+      <h3>El nacimiento del castellano</h3>
+      <p>
+        A lo largo de los siglos, las variedades romances de la
+        península ibérica evolucionaron. Una de ellas fue el castellano,
+        que posteriormente se extendió y se convirtió en la base del
+        español actual.
+      </p>
+    </article>
+
+  </section>
+
+  <section class="fact">
+    <h3>✦ ¿Sabías que…? ✦</h3>
+    <p>
+      El español pertenece a la familia de las <strong>lenguas romances</strong>,
+      junto con el portugués, el francés y el italiano. Estas lenguas
+      evolucionaron a partir del latín, aunque cada una siguió su propio
+      camino.
+    </p>
+  </section>
+
+  <section class="check-section" id="comprension">
+    <div class="eyebrow">✦ Tu opinión importa ✦</div>
+    <h2>¿Entendiste el origen del español?</h2>
+    <p>
+      Después de leer la explicación, dinos cómo te fue.
+      ¡Tu respuesta nos ayudará a saber si el tema quedó claro!
+    </p>
+
+    <div class="buttons">
+      <button class="vote yes" onclick="giveFeedback(true)">
+        👍 Sí, entendí
+      </button>
+      <button class="vote no" onclick="giveFeedback(false)">
+        👎 No, necesito otra explicación
+      </button>
+    </div>
+
+    <div class="bar-title" id="barTitle">BARRA DE COMPRENSIÓN</div>
+    <div class="bar"
+         id="progressBar"
+         role="progressbar"
+         aria-label="Resultado de comprensión"
+         aria-valuemin="0"
+         aria-valuemax="100"
+         aria-valuenow="0">
+      <div class="bar-fill" id="barFill"></div>
+    </div>
+
+    <div id="message" aria-live="polite">
+      Selecciona una respuesta para mostrar tu resultado.
+    </div>
+
+    <button class="restart" id="restartBtn" onclick="resetFeedback()">
+      ↻ Cambiar mi respuesta
+    </button>
+  </section>
+
+  <footer class="footer">
+    <strong>GRAMÁTICA HISTÓRICA</strong>
+    <p>Las palabras cambian, pero su historia permanece.</p>
+    <div class="eyebrow">✦ Fin de esta sección ✦</div>
+  </footer>
+
+</main>
+
+<script>
+function giveFeedback(understood) {
+  const fill = document.getElementById('barFill');
+  const bar = document.getElementById('progressBar');
+  const message = document.getElementById('message');
+  const title = document.getElementById('barTitle');
+  const restart = document.getElementById('restartBtn');
+
+  if (understood) {
+    fill.style.width = '100%';
+    fill.style.background = 'linear-gradient(90deg, #16895f, #43d69a)';
+    bar.setAttribute('aria-valuenow', '100');
+    title.textContent = '¡COMPRENSIÓN COMPLETA!';
+    message.innerHTML =
+      '<span class="feedback-icon">👍</span>' +
+      '<strong style="color:#43d69a">¡Excelente! Entendiste la explicación.</strong><br>' +
+      'Has completado esta parte del viaje por el origen del español.';
+  } else {
+    fill.style.width = '100%';
+    fill.style.background = 'linear-gradient(90deg, #a83253, #ff7185)';
+    bar.setAttribute('aria-valuenow', '100');
+    title.textContent = 'NECESITAS UN POCO MÁS DE AYUDA';
+    message.innerHTML =
+      '<span class="feedback-icon">👎</span>' +
+      '<strong style="color:#ff9bab">¡No te preocupes!</strong><br>' +
+      'Puedes volver a leer las tres etapas. Recuerda: el español evolucionó ' +
+      'a partir del latín que se extendió por la península ibérica. ' +
+      '¡Aprender lleva tiempo!';
+  }
+
+  restart.style.display = 'inline-block';
+  document.getElementById('comprension').scrollIntoView({
+    behavior: 'smooth',
+    block: 'center'
+  });
+}
+
+function resetFeedback() {
+  const fill = document.getElementById('barFill');
+  fill.style.width = '0%';
+  fill.style.background = '';
+  document.getElementById('progressBar').setAttribute('aria-valuenow', '0');
+  document.getElementById('barTitle').textContent = 'BARRA DE COMPRENSIÓN';
+  document.getElementById('message').textContent =
+    'Selecciona una respuesta para mostrar tu resultado.';
+  document.getElementById('restartBtn').style.display = 'none';
+}
+</script>
+
+</body>
+</html>
